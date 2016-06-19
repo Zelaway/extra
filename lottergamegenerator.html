@@ -1,0 +1,57 @@
+<!--Instructions: Build a Lottery Generator from scratch -->
+<!-- ==================================================== -->
+<!-- Your lottery generator should generate 9 random numbers on button click. (ex: 912121231) -->
+<!-- We will style our page using Twitter Bootstrap -->
+
+<!--Step 1: Create an Outline of Steps-->
+
+<!-- 
+1. Create BootStrap Template to look like the example with button click
+2. Create JS code to ramdomly create a number whenever the button is clicked, and lowers the reult by 1 field
+
+ -->
+<!--Step 2: Create HTML Code-->
+
+<!--Step 3: Create Javascript/jQuery Code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<title>Random Number Generator</title>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+		  <h1>Generate Lottery Numbers</h1>
+		  <p><a class="btn btn-primary btn-lg" id="button" role="button">Randomize</a></p>
+		</div>
+		<div class="row">
+				<div class="col-xs-12">
+				<h3 class="panel-title text-center" id="number">123456789</h3>
+				</div>			
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		//make random number
+	
+	var randomNumber = function(){
+		return Math.floor(Math.random() * 1000000000);
+	}
+		//use jquery to prepend new number to website
+
+	jQuery(document).ready(function(){
+		jQuery('#button').click(function(){
+			var newNumber = randomNumber();  //created new number 
+			$("#number").prepend("<h3>" + newNumber+ "</h3>") //prepeded to html
+			console.log(newNumber);
+		});
+	});
+
+	</script>
+	
+</body>
+</html>
